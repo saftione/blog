@@ -11,19 +11,10 @@ tags:
 
 Weather-Log for Fieldexperiments/Fields   
 
+|             OpenWeatherMap |      Api's     |     Technologie:    |
+| -----------------: | --------------:  | 
+|        {::nomarkdown}<ul><li>Temperatur</li><li>Niederschlag</li><li>Luftdruck</li><li>Luftfeuchte</li><li>Wind</li><li>Schnee</li></ul>{:/}  | {::nomarkdown}<ul> <li>Bodenfeuchte</li><li>Bodentemperatur 0cm</li><li>Bodentemoperatur -10cm</li></ul>{:/} | {::nomarkdown}<ul><li>Progressive Web App</li><li>Angular </li><li>Graph.js (Charts)</li><li>MongoDB</li><li>Heroku</li><li>node.js </li><li>Express Server</li></ul>{:/}        
 
-
-<div class="row">
-    <div class="col-md-6">
-        **some code block here**
-        **another code block here**
-    </div>
-    <div class="col-md-6">
-        **some text here**
-        ##some header here
-        ###something else here
-    </div>
-</div>
 
 
 
