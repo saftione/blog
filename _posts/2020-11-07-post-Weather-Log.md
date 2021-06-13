@@ -24,3 +24,7 @@ Weather-Log for Fieldexperiments/Fields
         ###something else here
     </div>
 </div>
+
+
+
+{% include figure image_path="/assets/images/weather-2.png" alt="Farmhack 2020" caption="Farmhack" %}
