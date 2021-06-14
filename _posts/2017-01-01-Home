@@ -1,7 +1,6 @@
 ---
 layout: splash
 permalink: /
-hidden: true
 header:
    overlay_image: "https://github.com/saftione/blog/blob/master/assets/images/header.jpg?raw=true"
 ---
