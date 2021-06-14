@@ -8,7 +8,7 @@ tags:
 ---
 
 ***Excel sheet to enter the serial interface of scales/analyzers in Excel***
-{% include figure image_path="/assets/images/weather-2.png" alt="Excel-Serial Port" caption="Excel-Serial Port" %}
+{% include figure image_path="/assets/images/comser1.png" alt="Excel-Serial Port" caption="Excel-Serial Port" %}
 
 
 {::nomarkdown}<a href="https://github.com/saftione/blog/raw/master/assets/excel_com_read_5.0.xlsm" class="btn" target="_blank">Download Excel COM Read</a>
