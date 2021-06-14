@@ -9,7 +9,8 @@ tags:
 
 Excel sheet to enter the serial interface of scales/analyzers in Excel
 
-<a href="https://www.opendesktop.org/p/1012532/" class="btn" target="_blank">Download from gnome-look</a>
+
+{::nomarkdown}<a href="https://www.opendesktop.org/p/1012532/" class="btn" target="_blank">Download from gnome-look</a>
 
 
 Change Excel settings from „,“ to „.“.
