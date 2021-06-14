@@ -11,7 +11,7 @@ tags:
 
 Weather-Log for Fieldexperiments/Fields   
 
-<a href="https://ng-weather-log.herokuapp.com/#/user" class="btn" target="_blank">Demo App</a>
+<a href="https://ng-weather-log.herokuapp.com/#/user" class="btn" target="_blank">Demo App</a>      
 <a href="https://github.com/saftione/open-wheather-map-log" class="btn" target="_blank">View on GitHub</a>
 
 
