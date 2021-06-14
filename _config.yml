@@ -73,7 +73,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
 header:
-   overlay_image: "/assets/images/header.jpg"
+   overlay_image: "https://github.com/saftione/blog/blob/master/assets/images/header.jpg?raw=true"
   
 footer:
   links:
