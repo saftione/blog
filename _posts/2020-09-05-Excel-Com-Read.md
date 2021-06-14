@@ -1,5 +1,5 @@
 ---
-title: "Excel-Template for Serial-COM-Interface"
+title: "Post: Excel-Template for Serial-COM-Interface"
 categories:
   - Blog
 tags:
@@ -7,10 +7,10 @@ tags:
   - Research
 ---
 
-Excel sheet to enter the serial interface of scales/analyzers in Excel
+***Excel sheet to enter the serial interface of scales/analyzers in Excel***
 
 
-{::nomarkdown}<a href="https://www.opendesktop.org/p/1012532/" class="btn" target="_blank">Download from gnome-look</a>
+{::nomarkdown}<a href="https://github.com/saftione/blog/raw/master/assets/excel_com_read_5.0.xlsm" class="btn" target="_blank">Download Excel COM Read</a>
 
 
 Change Excel settings from „,“ to „.“.
