@@ -1,8 +1,5 @@
 ---
 title: "Post: Notice"
-permalink: /
-header:
-   overlay_image: "https://github.com/saftione/blog/blob/master/assets/images/header.jpg?raw=true"
 categories:
   - Blog
 tags:
