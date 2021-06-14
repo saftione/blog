@@ -54,9 +54,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-header:
-  image: /assets/images/header.jpg
-  
+
 author:
   name   : "Florian T."
   avatar : "/assets/images/bio-photo.jpg"
@@ -74,7 +72,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
-
+header:
+   overlay_image: /assets/images/header.jpg
+  
 footer:
   links:
     - label: "Twitter"
