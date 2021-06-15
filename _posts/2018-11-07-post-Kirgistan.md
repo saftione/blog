@@ -1,6 +1,8 @@
 ---
 title: "Post: Kirgistan"
-excerpt_separator: "<!--more-->"
+header:
+   overlay_image: "https://github.com/saftione/blog/blob/master/assets/images/kirgistan_header.jpg?raw=true"
+   
 categories:
   - Blog
 tags:
@@ -11,4 +13,4 @@ tags:
 
 ***Agriculter in Kirgistan***
 
-{% include figure image_path="/assets/images/excelcom2.png" alt="Excel-Serial Port" caption="Excel-Serial Port" %}
+{% include figure image_path="/assets/images/kirgistan_header.png" alt="Excel-Serial Port" caption="Excel-Serial Port" %}
