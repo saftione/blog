@@ -13,4 +13,4 @@ tags:
 
 ***Agriculter in Kirgistan***
 
-{% include figure image_path="/assets/images/kirgistan_header.png" alt="Excel-Serial Port" caption="Excel-Serial Port" %}
+{% include figure image_path="/assets/images/kirgistan_header.png" alt="Arslanbob" caption="Arslanbob" %}
