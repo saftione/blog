@@ -1,0 +1,37 @@
+---
+layout: splash
+xpermalink: /
+hidden: true
+header:
+   overlay_image: "https://github.com/saftione/blog/blob/master/assets/images/header.jpg?raw=true"
+excerpt: >
+  Personal Blog - Agrar, IT
+  
+feature_row:
+  - image_path: "https://github.com/saftione/blog/blob/master/assets/images/header.jpg?raw=true"
+    alt: "customizable"
+    title: "Blog"
+    excerpt: ""
+    url: "https://saftione.github.io/blog/posts/"
+    btn_class: "btn--primary"
+    btn_label: "Learn more" 
+  - image_path: "https://github.com/saftione/blog/blob/master/assets/images/header.jpg?raw=true"
+    alt: "customizable"
+    title: "Agrar"
+    excerpt: ""
+    url: "https://saftione.github.io/blog/tags/#agrar"
+    btn_class: "btn--primary"
+    btn_label: "Learn more"    
+  - image_path: "https://github.com/saftione/blog/blob/master/assets/images/kirgistan_header.jpg?raw=true"
+    alt: "customizable"
+    title: "Travel"
+    excerpt: ""
+    url: "https://saftione.github.io/blog/tags/#travel"
+    btn_class: "btn--primary"
+    btn_label: "Learn more" 
+---
+
+
+
+
+{% include feature_row %}
