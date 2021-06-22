@@ -57,24 +57,24 @@ plugins:
 
 author:
   name   : "Florian T."
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/P1070614.JPG"
   bio    : "Agrar, IT, Field Experiments"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://"
+      url: "https://saftione.github.io/blog/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/saftione"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
       
 header:
-   overlay_image: "https://github.com/saftione/blog/blob/master/assets/images/header.jpg?raw=true"
+   overlay_image: "https://github.com/saftione/blog/blob/master/assets/images/kirgistan_header.jpg?raw=true"
   
 footer:
   links:
