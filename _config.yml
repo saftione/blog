@@ -74,7 +74,7 @@ author:
       url: "https://instagram.com/"
       
 header:
-   overlay_image: "https://github.com/saftione/blog/blob/master/assets/images/kirgistan_header.jpg?raw=true"
+   overlay_image: "https://github.com/saftione/blog/blob/master/assets/images/kirgistan_header.jpg"
   
 footer:
   links:
