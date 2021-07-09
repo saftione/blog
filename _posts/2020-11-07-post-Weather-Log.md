@@ -17,9 +17,9 @@ Weather-Log for Fieldexperiments/Fields
 
 
 
-|            <a href="https://openweathermap.org/" class="btn" target="_blank"> OpenWeatherMap</a> |         <a href="https://agromonitoring.com/" class="btn" target="_blank"> Agri Api</a> |     Technologie  |
+| <a href="https://openweathermap.org/" class="btn" target="_blank"> OpenWeatherMap</a> | <a href="https://agromonitoring.com/" class="btn" target="_blank"> Agri Api</a> |     Technologie  |
 | -----------------: | --------------:  | --------------:  | 
-|        {::nomarkdown}<ul><li>Temperatur</li><li>Niederschlag</li><li>Luftdruck</li><li>Luftfeuchte</li><li>Wind</li><li>Schnee</li></ul>{:/}  | {::nomarkdown}<ul><li>Bodenfeuchte</li><li>Bodentemperatur 0cm</li><li>Bodentemoperatur -10cm</li></ul>{:/} | {::nomarkdown}<ul><li>Progressive Web App</li><li>Angular </li><li>Graph.js (Charts)</li><li>MongoDB</li><li>Heroku</li><li>node.js </li><li>Express Server</li></ul>{:/} |       
+| <ul><li>Temperatur</li><li>Niederschlag</li><li>Luftdruck</li><li>Luftfeuchte</li><li>Wind</li><li>Schnee</li></ul> | <ul><li>Bodenfeuchte</li><li>Bodentemperatur 0cm</li><li>Bodentemoperatur -10cm</li></ul> | <ul><li>Progressive Web App</li><li>Angular </li><li>Graph.js (Charts)</li><li>MongoDB</li><li>Heroku</li><li>node.js </li><li>Express Server</li></ul> |       
 
 
 
