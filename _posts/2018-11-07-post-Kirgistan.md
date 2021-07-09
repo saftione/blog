@@ -8,6 +8,23 @@ tags:
   - foreign country
   - Agrar
   - Travel
+gallery:
+  - url: /assets/images/field.jpg
+    image_path: /assets/images/field.jpg
+    alt: "placeholder image 1"
+    title: "Image 1 title caption"
+  - url: /assets/images/potato.jpg
+    image_path: /assets/images/potato.jpg
+    alt: "placeholder image 2"
+    title: "Image 2 title caption"
+  - url: /assets/images/wallnuss.jpg
+    image_path: /assets/images/wallnuss.jpg
+    alt: "placeholder image 3"
+    title: "Image 3 title caption"
+  - url: /assets/images/mach.jpg
+    image_path: /assets/images/mach.jpg
+    alt: "placeholder image 3"
+    title: "Image 3 title caption"
 ---
 
 ***Agriculter in Kirgistan***
@@ -28,3 +45,6 @@ Kyrgyz agriculture
 - cultivation in high altitudes
 - mainly irrigated fields
 - cultivation of plants for daily needs
+
+
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
