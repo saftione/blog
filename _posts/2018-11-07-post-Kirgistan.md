@@ -25,12 +25,13 @@ gallery:
     image_path: /assets/images/mach.jpg
     alt: "placeholder image 3"
     title: "Image 3 title caption"
+  - url: /assets/images/kirgistan_header.jpg
+    image_path: /assets/images/kirgistan_header.jpg
+    alt: "placeholder image 3"
+    title: "Image 3 title caption"
 ---
 
 ***Agriculter in Kirgistan***
-
-{% include figure image_path="/assets/images/kirgistan_header.jpg" alt="Arslanbob" caption="Arslanbob" %}
-
 
 Facts about Kyrgyzstan: 
 - 200000 m² ( = <1/2 of Germany )
