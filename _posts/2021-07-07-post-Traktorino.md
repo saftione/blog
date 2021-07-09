@@ -1,6 +1,6 @@
 ---
 title: "Post: Traktorino"
-date: 2021-07-10915:34:30-04:00
+date: 2021-07-10T15:34:30-04:00
 categories:
   - Blog
 tags:
