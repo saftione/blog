@@ -35,7 +35,7 @@ gallery:
 
 |        Facts about Kyrgyzstan:             |     Kyrgyz agriculture        |        
 | -----------------: | --------------:  
-|  <ul><li>200000 m² ( = <1/2 of Germany ) </li><li>90% above 1500m</li><li>20% of the area usable for agriculture</li><li>Climate: semiarid </li></ul>  | <ul><li>Bodenfeuchte</li><li>Bodentemperatur 0cm</li><li>Bodentemoperatur -10cm</li></ul>  |  
+|  {::nomarkdown} <ul><li>200000 m² ( = <1/2 of Germany ) </li><li>90% above 1500m</li><li>20% of the area usable for agriculture</li><li>Climate: semiarid </li></ul> {:/}  | {::nomarkdown} <ul><li>Bodenfeuchte</li><li>Bodentemperatur 0cm</li><li>Bodentemoperatur -10cm</li></ul> {:/} |  
 
 
 Facts about Kyrgyzstan: 
