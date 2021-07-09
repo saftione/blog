@@ -48,4 +48,4 @@ Kyrgyz agriculture
 - cultivation of plants for daily needs
 
 
-{% include gallery caption="This is a sample gallery with **Markdown support**." %}
+{% include gallery caption="A selection of pictures from Kyrgyzstan" %}
