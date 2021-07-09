@@ -33,10 +33,15 @@ gallery:
 
 ***Agriculter in Kirgistan***
 
-|        Facts about Kyrgyzstan:             |     Kyrgyz agriculture        |        
-| -----------------: | --------------:  
-|  {::nomarkdown} <ul><li>200000 m² ( = <1/2 of Germany ) </li><li>90% above 1500m</li><li>20% of the area usable for agriculture</li><li>Climate: semiarid </li></ul> {:/}  | {::nomarkdown} <ul><li>much old technique </li><li>Handwork</li><li>improvisation</li><li>cultivation in high altitudes</li><li>mainly irrigated fields</li><li>cultivation of plants for daily needs</li></ul> {:/} |  
-
-
+|        Facts about Kyrgyzstan:          |     Kyrgyz agriculture         |        
+| -----------------:                      | --------------:                |
+|200000 m² ( = <1/2 of Germany )          |much old technique              |  
+|90% above 1500m                          |Handwork                        |  
+|20% of the area usable for agriculture   |improvisation                   |  
+|Climate: semiarid                        |cultivation in high altitudes   |  
+|                                         |mainly irrigated fields         |  
+|                                         |cultivation of plants for daily needs|  
+|                                         |                                |  
+|                                         |                                |  
 
 {% include gallery caption="A selection of pictures from Kyrgyzstan" %}
