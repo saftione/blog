@@ -33,6 +33,15 @@ gallery:
 
 ***Agriculter in Kirgistan***
 
+|        Facts about Kyrgyzstan:             |       
+Kyrgyz agriculture        |        
+| -----------------: | --------------:  
+|      - 200000 m² ( = <1/2 of Germany )
+- 90% above 1500m
+- 20% of the area usable for agriculture
+- Climate: semiarid              |               | 
+
+
 Facts about Kyrgyzstan: 
 - 200000 m² ( = <1/2 of Germany )
 - 90% above 1500m
