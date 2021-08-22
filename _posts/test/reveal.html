@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Florian Tröber" />
+  <title>Niklifu</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="reveal_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="styles.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="reveal_files/header-attrs-2.7/header-attrs.js"></script>
+    <script src="reveal_files/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+    <script src="reveal_files/plotly-binding-4.9.4.1/plotly.js"></script>
+    <script src="reveal_files/typedarray-0.1/typedarray.min.js"></script>
+    <script src="reveal_files/jquery-3.5.1/jquery.min.js"></script>
+    <link href="reveal_files/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+    <script src="reveal_files/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+    <link href="reveal_files/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+    <script src="reveal_files/plotly-main-1.57.1/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Niklifu</h1>
+    <h2 class="author">Florian Tröber</h2>
+</section>
+
+<section id="section" class="slide level2" data-background-video="C:/Users/flori/OneDrive/Dokumente/HTW/Spitzwegerich/R/Presentation/Presentation/img/hummel.mp4" data-background-size="200px" data-background-video-loop="true" data-background-position="bottom">
+<h2 data-background-video="C:/Users/flori/OneDrive/Dokumente/HTW/Spitzwegerich/R/Presentation/Presentation/img/hummel.mp4" data-background-size="200px" data-background-video-loop="true" data-background-position="bottom"></h2>
+<p class="whitetext" style="font-size: 2.9em !important;">
+<p>NiKliFu</p>
+</p>
+<p class="whitetext">
+<p>Entwicklung nitrifikationshemmender und klimaresilienter Anbausysteme mit Futterleguminosen</p>
+</p>
+</section>
+<section id="zielsetzung" class="slide level2">
+<h2>Zielsetzung</h2>
+<p>Entwicklung neuartiger Futterleguminosengemenge mittels Integration von Spitzwegerich</p>
+<p>⋅⋅* 1. Minimierung der Nitratverluste</p>
+<p>⋅⋅* 2. höhere Ertragsleistung in Trockenperioden</p>
+<aside class="notes">
+<p>Oh hey, these are some notes. They’ll be hidden in your presentation, but you can see them if you open the speaker notes window (hit ‘s’ on your keyboard).</p>
+</aside>
+</section>
+<section id="voruntersuchung" class="slide level2">
+<h2>Voruntersuchung</h2>
+<p><img src="img/Dietz1.jpg" style="border:0; text-decoration:none; outline:none" width="auto" height="auto"/></p>
+<p class="imgsize">
+<p>Abb. 1: Einfluss der Zugabe von Pflanzenpresssaft von Spitzwegerich auf die N-Mineralisation im Boden (Dietz et al. 2013)</p>
+</p>
+</section>
+<section id="versuchsaufbau" class="slide level2">
+<h2>Versuchsaufbau</h2>
+<p>2 Standorte</p>
+<p>Randomisierte Blockanlage 4 WDH</p>
+<p>Zwei Wiederholungen<br />
+- 2019 -</p>
+<div class="container">
+<div class="col">
+<p>Column 1 Content</p>
+</div>
+<div class="col">
+<p>Column 2 Content</p>
+</div>
+</div>
+</section>
+<section id="versuchsvarianten" class="slide level2">
+<h2>Versuchsvarianten</h2>
+<div id="htmlwidget-1f40406bf1b2cbbe4604" style="width:768px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1f40406bf1b2cbbe4604">{"x":{"visdat":{"198437ba6a63":["function () ","plotlyVisDat"]},"cur_data":"198437ba6a63","attrs":{"198437ba6a63":{"x":{},"y":{},"text":["0%","25%","50%","75%","100%","75%","50%","25%","0%"],"textposition":"auto","name":"Rotklee","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"198437ba6a63.1":{"x":{},"y":{},"text":["100%","75%","50%","25%","0%","0%","0%","0%","0%"],"textposition":"auto","name":"Spitzwegerich","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"198437ba6a63.2":{"x":{},"y":{},"text":["0%","0%","0%","0%","0%","25%","50%","75%","100%"],"textposition":"auto","name":"Weidelgras","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"Gemengeanteil [%]"},"barmode":"stack","legend":{"x":100,"y":0.5},"xaxis":{"domain":[0,1],"automargin":true,"title":"Variante","type":"category","categoryorder":"array","categoryarray":["W100","R25/W75","R50/W50","R75/W25","R100","R75/S25","R50/S50","R25/S75","S100"]},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["W100","R25/W75","R50/W50","R75/W25","R100","R75/S25","R50/S50","R25/S75","S100"],"y":[0,25,50,75,100,75,50,25,0],"text":["0%","25%","50%","75%","100%","75%","50%","25%","0%"],"textposition":["auto","auto","auto","auto","auto","auto","auto","auto","auto"],"name":"Rotklee","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["W100","R25/W75","R50/W50","R75/W25","R100","R75/S25","R50/S50","R25/S75","S100"],"y":[100,75,50,25,0,0,0,0,0],"text":["100%","75%","50%","25%","0%","0%","0%","0%","0%"],"textposition":["auto","auto","auto","auto","auto","auto","auto","auto","auto"],"name":"Spitzwegerich","type":"bar","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["W100","R25/W75","R50/W50","R75/W25","R100","R75/S25","R50/S50","R25/S75","S100"],"y":[0,0,0,0,0,25,50,75,100],"text":["0%","0%","0%","0%","0%","25%","50%","75%","100%"],"textposition":["auto","auto","auto","auto","auto","auto","auto","auto","auto"],"name":"Weidelgras","type":"bar","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</section>
+<section id="versuchsvariante-2" class="slide level2">
+<h2>Versuchsvariante 2</h2>
+<p><img src="img/saatmenge.jpg" style="border:0; text-decoration:none; outline:none" width="auto" height="auto"/></p>
+</section>
+<section id="feldfutterbau" class="slide level2">
+<h2>Feldfutterbau</h2>
+<ol type="1">
+<li>Versuchsjahr</li>
+</ol>
+<p>3 Erntetermine</p>
+<p>Gesamtertrag</p>
+<p>Ertrag Mischungspartner</p>
+<p>N-Min 30cm</p>
+<p>3 x N-Min bis 120cm</p>
+</section>
+<section id="getreideanbau" class="slide level2">
+<h2>Getreideanbau</h2>
+</section>
+<section id="inkubationsversuch" class="slide level2">
+<h2>Inkubationsversuch</h2>
+<div class="container">
+<div class="col">
+<p>6 Entnahmetermine bei bis zu 120 Tage Inkubation</p>
+<p>Versuchsstufen 6 Stickstoff-Stufen 5 Pflanzenmischungen 3 x Reinsaat: Weidelgras, Klee, Spitzwegerich 2 x Gemenge: 50/50 Spross/Wurzel</p>
+</div>
+<div class="col">
+<p><img src="img/Inkubation.png" style="border:0; text-decoration:none; outline:none " width="auto" height="auto"/></p>
+</div>
+</div>
+</section>
+<section id="standorte" class="slide level2">
+<h2>Standorte</h2>
+<p><img src="img/Standort.jpg" style="border:0; text-decoration:none; outline:none" width="auto" height="auto"/></p>
+</section>
+<section id="ertrag-der-futterleguminosengemenge" class="slide level2">
+<h2>Ertrag der Futterleguminosengemenge</h2>
+<div id="htmlwidget-4a1501eefb6ab016bb35" style="width:768px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4a1501eefb6ab016bb35">{"x":{"visdat":{"198471667d17":["function () ","plotlyVisDat"],"1984730e64e6":["function () ","data"]},"cur_data":"1984730e64e6","attrs":{"198471667d17":{"x":{},"y":{},"boxpoints":"all","name":"Struppen 2020","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"1984730e64e6":{"x":{},"y":{},"boxpoints":"all","name":"Struppen 2021","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"boxmode":"group","yaxis":{"domain":[0,1],"automargin":true,"title":"TM Ertrag [dt/ha]"},"barmode":"stack","xaxis":{"domain":[0,1],"automargin":true,"title":"Variante","type":"category","categoryorder":"array","categoryarray":["W100","R25/W75","R50/W50","R75/W25","R100","R75/S25","R50/S50","R25/S75","S100"]},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","x":["R100","R75/W25","R50/W50","R25/W75","W100","R75/S25","R50/S50","R25/S75","S100","R100","R75/W25","R50/W50","R25/W75","W100","R75/S25","R50/S50","R25/S75","S100","R100","R75/W25","R50/W50","R25/W75","W100","R75/S25","R50/S50","R25/S75","S100","R100","R75/W25","R50/W50","R25/W75","W100","R75/S25","R50/S50","R25/S75","S100"],"y":[45.6652540317879,31.12842521418,12.9728025678503,30.0479192494703,9.02548306812657,34.8582384235452,30.582039017574,31.2520478912969,22.73601832857,35.8542221077632,39.5099283131384,26.4485255611535,32.3113346589447,8.66326883319311,42.7251996924801,49.7976283446599,43.6701591640093,32.4419862696335,32.2943539589029,36.7645527439342,31.3762443423087,37.1464339293679,10.8478017742163,34.190036518983,45.6705202777174,32.8512639623751,31.223701288901,39.9332014187547,40.8884628406009,31.2177679492344,28.0180913908435,21.5665088570821,44.0116941365381,44.3508300681222,36.0384579482871,30.0880042315871],"boxpoints":"all","name":"Struppen 2020","type":"box","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(255,127,14,0.5)","x":["R100","R75/W25","R50/W50","R25/W75","W100","R75/S25","R50/S50","R25/S75","S100","R100","R75/W25","R50/W50","R25/W75","W100","R75/S25","R50/S50","R25/S75","S100","R100","R75/W25","R50/W50","R25/W75","W100","R75/S25","R50/S50","R25/S75","S100","R100","R75/W25","R50/W50","R25/W75","W100","R75/S25","R50/S50","R25/S75","S100"],"y":[47.0272315898266,35.589089687293,24.2780003122125,27.8698346736121,42.2338931011503,83.3193663405397,60.3714481321042,61.6437528935767,40.9821666096606,57.5284004422297,61.4421075455334,63.4881043107243,41.9610758248952,31.060597860403,61.6959647251955,68.2895409689808,67.1891099283289,55.2523347900353,72.2029714253654,58.1511049067652,53.3626310900976,42.9055088510696,31.4729714729715,89.1620347245697,76.455244279323,58.8932582550418,31.944858563191,66.1085583068839,74.7542591336113,49.2436546151963,42.469517035472,30.0308577080024,60.474137471764,84.5458596790119,57.7639209800475,53.9157003888751],"boxpoints":"all","name":"Struppen 2021","type":"box","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</section>
+<section id="gravimetrischer-wasserhaushalt-nach-futterleguminosenanbau" class="slide level2">
+<h2>Gravimetrischer Wasserhaushalt nach Futterleguminosenanbau</h2>
+<div id="htmlwidget-cda2ecc5d87b823dff11" style="width:768px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cda2ecc5d87b823dff11">{"x":{"visdat":{"19845c44248e":["function () ","plotlyVisDat"]},"cur_data":"19845c44248e","attrs":{"19845c44248e":{"x":{},"y":{},"boxpoints":"all","visible":"legendonly","color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"boxmode":"group","yaxis":{"domain":[0,1],"automargin":true,"title":"Gravimetrischer Wasseranteil [%]"},"barmode":"stack","xaxis":{"domain":[0,1],"automargin":true,"title":"Variante","type":"category","categoryorder":"array","categoryarray":["W100","R25/W75","R50/W50","R75/W25","R100","R75/S25","R50/S50","R25/S75","S100"]},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","x":["R100","R100","R50/S50","R50/S50","R25/W75","R25/W75","S100","S100","R75/S25","R75/S25","R25/S75","R25/S75","W100","W100","R75/W25","R75/W25","R50/W50","R50/W50","S100","S100","R100","R100","W100","W100","R50/W50","R50/W50","R75/S25","R75/S25","R25/S75","R25/S75","R25/W75","R25/W75","W100","W100","R100","R100","R75/W25","R75/W25","R50/S50","R50/S50","R75/W25","R75/W25","W100","W100","R50/W50","R50/W50","R75/S25","R75/S25","R50/S50","R50/S50","R75/S25","R75/S25","S100","S100","R25/W75","R25/W75","R100","R100","R50/W50","R50/W50","R75/W25","R75/W25","R25/S75","R25/S75","S100","S100","R25/W75","R25/W75","R50/S50","R50/S50","R25/S75","R25/S75"],"y":[13.8842046093311,13.9540751955589,13.9691975141853,14.8060742868869,15.012841466262,15.4002026342452,15.7069927579247,15.3310530173467,14.4086021505376,14.5272969374168,14.6710208030963,14.5716072545341,14.366335418967,14.2080745341615,13.7444625786897,13.5464430761169,14.787701317716,14.7589252852411,15.0907232302581,14.7837091578463,14.7411285631181,14.7610807932916,15.7594485381507,15.944976076555,15.4677554941756,15.131198705352,14.6032504780115,14.4582768396401,14.5867866445655,14.7439085032322,13.7547408343868,14.3207399977711,18.6392548841436,14.6985962014864,14.5195819166352,13.821234334358,14.6956184567662,14.0172867343104,14.8134863701578,14.0120294052127,15.3677997595365,14.9353701527615,14.9231644849175,15.1284835323923,14.3937630905283,13.8709268416381,14.8767908309456,14.4906394359348,15.2516522623284,14.8726273726274,13.4838709677419,13.6120996441281,14.5405669599218,14.7052179805738,15.4310945851731,15.2332704995287,14.4533453683854,14.0300230946882,10.1838413159168,14.3072289156626,14.1215839375349,14.0181972069403,14.0389016018307,14.9565217391304,14.8000993295257,14.679504088631,14.8062314922106,14.7506150749273,14.9951550387597,14.8182557194286,15.1851456621492,14.0639589169001],"boxpoints":"all","visible":"legendonly","type":"box","name":"0-30","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["R100","R100","R50/S50","R50/S50","R25/W75","R25/W75","S100","S100","R75/S25","R75/S25","R25/S75","R25/S75","W100","W100","R75/W25","R75/W25","R50/W50","R50/W50","S100","S100","R100","R100","W100","W100","R50/W50","R50/W50","R75/S25","R75/S25","R25/S75","R25/S75","R25/W75","R25/W75","W100","W100","R100","R100","R75/W25","R75/W25","R50/S50","R50/S50","R75/W25","R75/W25","W100","W100","R50/W50","R50/W50","R75/S25","R50/S50","R50/S50","R75/S25","R75/S25","S100","S100","R25/W75","R25/W75","R100","R100","R50/W50","R50/W50","R75/W25","R75/W25","R25/S75","R25/S75","S100","S100","R25/W75","R25/W75","R50/S50","R50/S50","R25/S75","R25/S75"],"y":[12.6117756358147,13.4397163120567,13.5402455661664,13.4868773433315,13.4404749718497,14.5159194282001,13.5964411999544,13.013013013013,12.560557721848,13.0006013229104,13.2054794520548,13.3106768620787,13.6233073450964,13.4640666082384,14.3327654741624,12.9068322981366,13.7705587904791,17.0518285842495,13.0390721765567,12.8146742567995,13.5791160980078,12.8844731000951,13.3698814052361,13.0956462118615,13.2157085941947,13.6236467583019,12.5514874141876,13.3876730683341,12.9087387490031,13.070220399795,13.4136901470751,16.9952413324269,13.1162915326903,13.0752373995617,12.8838951310861,12.5061124694377,11.8328933777115,12.3611608742386,12.4598930481283,13.3832976445396,13.8408714184229,13.0740080249666,13.3254716981132,13.1139835487662,12.5616921269095,13.5039533915938,13.1223417563172,12.9797115619653,12.5113122171946,13.2160629556764,13.2471334471822,14.1598411516505,13.2690705700345,13.2513135973344,13.4845548843041,12.7263102170461,14.026402640264,12.3325635103926,13.2824427480916,12.7603570611124,13.2994587429581,13.3579994896657,13.4519038076152,13.0238846327174,12.2396634862009,12.4844977263332,12.8169371196755,13.5628805374764,13.4972170686456,14.0310959423587,13.5105204872647],"boxpoints":"all","visible":"legendonly","type":"box","name":"30-60","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","x":["R100","R100","R50/S50","R50/S50","R25/W75","R25/W75","S100","S100","R75/S25","R75/S25","R25/S75","R25/S75","W100","W100","R75/W25","R75/W25","R50/W50","R50/W50","S100","S100","R100","R100","W100","W100","R50/W50","R50/W50","R75/S25","R75/S25","R25/S75","R25/S75","R25/W75","R25/W75","W100","W100","R100","R100","R75/W25","R75/W25","R50/S50","R75/W25","R75/W25","W100","W100","R50/W50","R50/W50","R75/S25","R75/S25","R50/S50","R50/S50","R75/S25","R75/S25","S100","S100","R25/W75","R25/W75","R100","R100","R50/W50","R50/W50","R75/W25","R75/W25","R25/S75","R25/S75","S100","S100","R25/W75","R25/W75","R50/S50","R50/S50","R25/S75","R25/S75"],"y":[9.80640263191193,12.8654970760234,13.5093352360566,12.671384343211,13.6213437767715,13.6592460006712,10.6013416387159,12.1540164841924,12.2631115028647,13.6432541687721,12.379835873388,13.4867334581086,13.2855632561964,13.9078498293515,12.5647668393782,13.7511890920622,12.3298458769265,13.1665249605247,10.7416578233699,12.6577338363471,13.9575777557973,13.0619548199508,14.011872372001,13.5728298185385,13.0092592592593,13.4813033019899,12.8645407467975,12.3245665762472,12.551996672213,12.748624629708,12.0473996050033,12.8127369219105,12.0083054562233,13.9029964448959,13.1908435563425,12.8522420975251,13.2234432234432,13.0222926056767,12.2141585649733,13.9318885448916,11.1652794292509,13.1086142322097,14.0030441400304,13.8815714122094,13.2895727967287,13.5917740219832,12.9658792650919,11.2571067593178,10.0227790432802,12.4224329703782,13.5728542914172,13.3780444758207,12.5500667556742,12.8376763088692,13.0982984453422,12.2533333333333,13.1623314065511,12.8366561734872,13.2551740638832,12.4898149225934,13.2819582955576,12.2180862710751,12.2558168470823,12.4155602143023,10.916732931955,12.9150892374256,12.8490325570618,12.8726122399319,12.9096822616963,12.7793120763244,13.6118759727044],"boxpoints":"all","visible":"legendonly","type":"box","name":"60-90","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(231,138,195,0.5)","x":["R100","R100","R50/S50","R50/S50","R25/W75","R25/W75","S100","S100","R75/S25","R75/S25","R25/S75","R25/S75","W100","W100","R75/W25","R75/W25","R50/W50","R50/W50","S100","S100","R100","R100","W100","W100","R50/W50","R50/W50","R75/S25","R75/S25","R25/S75","R25/S75","R25/W75","R25/W75","W100","W100","R100","R100","R75/W25","R75/W25","R50/S50","R50/S50","R75/W25","R75/W25","W100","W100","R50/W50","R50/W50","R75/S25","R75/S25","R50/S50","R50/S50","R75/S25","R75/S25","S100","S100","R25/W75","R25/W75","R100","R100","R50/W50","R50/W50","R75/W25","R75/W25","R25/S75","R25/S75","S100","S100","R25/W75","R25/W75","R50/S50","R50/S50","R25/S75","R25/S75"],"y":[7.98426536253456,7.43392070484582,10.1709310967194,10.2306207457076,12.2075515404216,13.1123919308357,13.4290540540541,11.7544051658094,10.9314278550834,12.0405743643789,11.922377198302,14.1200628095181,13.4698275862069,13.1471642159891,16.2725853223288,11.5462049526877,13.3560436978738,12.6534675367769,7.5302848412092,10.6010800657431,12.8681991452004,11.3601630157922,14.0368622162284,14.7812580895677,13.5362534026231,12.5759700794764,11.1842105263158,11.0074855810529,10.4755178907721,10.1713722105782,8.71095968199887,10.3340292275574,9.51665124884367,11.7669172932331,11.0463733650416,10.6183563835867,12.4544211485871,10.7436182019978,10.8245149911817,9.8782448885826,11.0883944678292,8.80445910590376,13.4428879310345,14.2028985507246,12.1790736679138,13.1906702898551,10.9697344039531,8.94260538223387,8.34227148134906,8.69927159209157,11.2824583286087,10.3220590216952,10.6901978417266,12.093553907587,9.90159901599016,12.1589927169485,9.0899241603467,9.0899241603467,7.82268578878748,10.0213219616205,10.2618292826112,10.144148020654,9.01982378854625,8.96389713155292,8.86384014346098,8.60132158590309,9.7261689485921,12.534664448142,9.62719298245614,9.46261682242991,6.96047569080098,9.6319018404908],"boxpoints":"all","visible":"legendonly","type":"box","name":"90-120","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</section>
+<section id="nitrathaushalt-im-weizen" class="slide level2">
+<h2>Nitrathaushalt im Weizen</h2>
+<div id="htmlwidget-f25940856fb218ecb269" style="width:768px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f25940856fb218ecb269">{"x":{"visdat":{"19847c78c46":["function () ","plotlyVisDat"]},"cur_data":"19847c78c46","attrs":{"19847c78c46":{"x":{},"y":{},"color":{},"frame":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"autorange":"reversed","title":"Nitratmean","range":[-1.01651977969152,28.4203635784869]},"legend":{"traceorder":"normal"},"barmode":"stack","xaxis":{"domain":[0,1],"automargin":true,"title":"Variante","type":"category","categoryorder":"array","categoryarray":["W100","R25/W75","R50/W50","R75/W25","R100","R75/S25","R50/S50","R25/S75","S100"]},"hovermode":"closest","showlegend":true,"sliders":[{"currentvalue":{"prefix":"Datum: ","xanchor":"right","font":{"size":16,"color":"rgba(204,204,204,1)"}},"steps":[{"method":"animate","args":[["2020-10-23"],{"transition":{"duration":500,"easing":"linear"},"frame":{"duration":500,"redraw":true},"mode":"immediate"}],"label":"2020-10-23","value":"2020-10-23"},{"method":"animate","args":[["2020-11-11"],{"transition":{"duration":500,"easing":"linear"},"frame":{"duration":500,"redraw":true},"mode":"immediate"}],"label":"2020-11-11","value":"2020-11-11"},{"method":"animate","args":[["2020-11-26"],{"transition":{"duration":500,"easing":"linear"},"frame":{"duration":500,"redraw":true},"mode":"immediate"}],"label":"2020-11-26","value":"2020-11-26"},{"method":"animate","args":[["2020-12-21"],{"transition":{"duration":500,"easing":"linear"},"frame":{"duration":500,"redraw":true},"mode":"immediate"}],"label":"2020-12-21","value":"2020-12-21"},{"method":"animate","args":[["2021-02-01"],{"transition":{"duration":500,"easing":"linear"},"frame":{"duration":500,"redraw":true},"mode":"immediate"}],"label":"2021-02-01","value":"2021-02-01"}],"visible":true,"pad":{"t":40}}],"updatemenus":[{"type":"buttons","direction":"right","showactive":false,"y":0,"x":0,"yanchor":"top","xanchor":"right","pad":{"t":60,"r":5},"buttons":[{"label":"Play","method":"animate","args":[null,{"fromcurrent":true,"mode":"immediate","transition":{"duration":500,"easing":"linear"},"frame":{"duration":500,"redraw":true}}]}]}]},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[9.02678332472571,2.84284796220116,4.84264381260792,5.0264461804148,4.28125536402083,3.96907258664281,3.45162013881657,3.75451101480892,4.92534864922621],"frame":"2020-10-23","type":"bar","name":"0-30","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[3.85509495001599,1.68403223680399,0.831533065559603,1.76736142805076,0.731275529639357,1.24387591189742,1.22510954019484,0.806241916584889,1.18713200316156],"frame":"2020-10-23","type":"bar","name":"30-60","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[0.920667517837519,1.44796933573067,1.33515261424764,1.373366266301,0.492952077225517,1.38603493453455,0.898651908352872,1.4467216175487,1.13464079608922],"frame":"2020-10-23","type":"bar","name":"60-90","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[6.38585677056654,3.91211550344603,3.58377338708178,2.80797172019684,2.76415539066783,5.18422662362302,2.5502537387523,3.22293206928358,2.98481911369231],"frame":"2020-10-23","type":"bar","name":"90-120","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","visible":true}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"frames":[{"name":"2020-10-23","data":[{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[9.02678332472571,2.84284796220116,4.84264381260792,5.0264461804148,4.28125536402083,3.96907258664281,3.45162013881657,3.75451101480892,4.92534864922621],"frame":"2020-10-23","type":"bar","name":"0-30","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[3.85509495001599,1.68403223680399,0.831533065559603,1.76736142805076,0.731275529639357,1.24387591189742,1.22510954019484,0.806241916584889,1.18713200316156],"frame":"2020-10-23","type":"bar","name":"30-60","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[0.920667517837519,1.44796933573067,1.33515261424764,1.373366266301,0.492952077225517,1.38603493453455,0.898651908352872,1.4467216175487,1.13464079608922],"frame":"2020-10-23","type":"bar","name":"60-90","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[6.38585677056654,3.91211550344603,3.58377338708178,2.80797172019684,2.76415539066783,5.18422662362302,2.5502537387523,3.22293206928358,2.98481911369231],"frame":"2020-10-23","type":"bar","name":"90-120","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0,1,2,3]},{"name":"2020-11-11","data":[{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[15.8706015614958,6.53018986800922,11.9416695378564,7.7511876095106,14.7809327623466,9.45994801063326,13.4895589546305,3.86408431962255,14.3966012749306],"frame":"2020-11-11","type":"bar","name":"0-30","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[8.08272453901956,1.53458625358188,2.23565682828417,2.31760656312756,3.06870660412837,4.87183944103446,3.8706428800828,2.08983660675078,2.35829331706542],"frame":"2020-11-11","type":"bar","name":"30-60","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[4.05335972003133,0.458254846161193,0.679937498294377,0.657150383252614,0.699104474542906,1.20959306439941,2.60521853438645,1.0097342912519,0.883324013407859],"frame":"2020-11-11","type":"bar","name":"60-90","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[5.41377678443423,1.8866081219982,2.04415996328783,1.89755843795318,2.06545019240471,3.17057000041984,2.51976134169173,2.19902581629138,3.35810586045084],"frame":"2020-11-11","type":"bar","name":"90-120","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0,1,2,3]},{"name":"2020-11-26","data":[{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[17.9435568258799,6.52796868487515,12.7841994613938,8.69762192992463,15.0128215691174,10.6754362447838,13.0849824784464,4.77876629963901,10.8879385306839],"frame":"2020-11-26","type":"bar","name":"0-30","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[12.1548134167534,1.98451360002194,3.81176313417205,2.87232718478321,5.14678873985616,3.76345486432534,3.74268895886601,1.75853185016174,2.2662044240476],"frame":"2020-11-26","type":"bar","name":"30-60","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[2.63007450296918,0.620949924442718,0.631654167437986,0.592001526436456,0.480739965445881,1.16597452897314,1.00067141666286,0.321520372952954,0.773271863290407],"frame":"2020-11-26","type":"bar","name":"60-90","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[4.06856742235038,2.19480169096177,2.40114281656541,1.80766788477596,1.83103476400334,4.09518294494805,2.65910370932081,1.43232951998481,3.31492129563441],"frame":"2020-11-26","type":"bar","name":"90-120","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0,1,2,3]},{"name":"2020-12-21","data":[{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[27.0823234258424,10.8889830523455,16.8184143985689,11.5988751595994,19.1580429170685,15.2401271821467,20.2936598552762,5.30392058832307,12.6751827058314],"frame":"2020-12-21","type":"bar","name":"0-30","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[10.8545720552055,1.90909948089239,3.90771200282631,2.79092571988134,4.23374070369448,5.10952418210303,4.32197365963275,1.36406006645938,2.02934501984589],"frame":"2020-12-21","type":"bar","name":"30-60","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[2.18660640571143,0.752993132866849,0.83376724034554,0.673695782288691,0.514061872111307,1.20039886463021,1.35623359276141,0.605048475342026,1.07385515020293],"frame":"2020-12-21","type":"bar","name":"60-90","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[3.98470038694722,1.80003160077464,1.73319846725686,1.98773857479098,1.82895056378456,3.88962745052511,2.97493643959345,1.67694477212267,2.75999194809615],"frame":"2020-12-21","type":"bar","name":"90-120","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0,1,2,3]},{"name":"2021-02-01","data":[{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[9.74084212122131,9.23878471617843,9.20455951237435,14.4241514763545,12.0684074195451,14.873083380565,10.2234852534236,7.08436332835149,8.65077724236381],"frame":"2021-02-01","type":"bar","name":"0-30","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[8.67836481317647,4.36725434589382,7.26419324473552,7.16730157230501,8.07388374163707,10.8861221823501,8.00374513189021,3.10006238805745,4.97921806285177],"frame":"2021-02-01","type":"bar","name":"30-60","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[6.70113707680233,1.40213777481825,3.66191670221271,2.68169907275384,5.21720894748499,4.54481068075218,5.79208264939518,1.00941674646096,2.76998522273871],"frame":"2021-02-01","type":"bar","name":"60-90","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","visible":true},{"x":["R100","R25/S75","R25/W75","R50/S50","R50/W50","R75/S25","R75/W25","S100","W100"],"y":[12.8560921768792,2.36336084308295,5.45528905139296,1.76247814896711,6.45251920399104,5.26788743177481,6.53065052724613,2.46460657903605,3.88688335734234],"frame":"2021-02-01","type":"bar","name":"90-120","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0,1,2,3]}],"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</section>
+<section id="vorläufige-erkenntnisse-futterleguminosen" class="slide level2">
+<h2>Vorläufige Erkenntnisse Futterleguminosen</h2>
+<p class="whitetext" style="font-size: 3.5em !important;">
+<p>NiKliFu</p>
+</p>
+<ul>
+<li class="fragment">höhere Erträge des Spitzwegerichs bei Trockenstress</li>
+<li class="fragment">Wasserzugrif des Spitzwegerichs in Tiefere Bodenschichten</li>
+<li class="fragment">Bullet 3</li>
+</ul>
+</section>
+<section id="vorläufige-erkenntnisse-winterweizen" class="slide level2">
+<h2>Vorläufige Erkenntnisse Winterweizen</h2>
+<p class="whitetext" style="font-size: 3.5em !important;">
+<p>NiKliFu</p>
+</p>
+<ul>
+<li class="fragment">geringere Nitratgehalte bei Versuchsvarianten mit Spitzwegerich</li>
+<li class="fragment">geringere Nitratverlagerung in Tiefere Bodenschichten bei Versuchsvarianten mit Spitzwegerich</li>
+<li class="fragment">Bullet 3</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="reveal_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  <![endif]-->  <link rel="stylesheet" href = "http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href = "assets/css/ribbons.css">
+
+<script>
+ Reveal.initialize({
+    // Optional reveal.js plugins
+    dependencies: [
+        { src: 'libs/reveal.js-3.2.0/plugin/zoom-js/zoom.js', async: true },
+        { src: 'libs/reveal.js-3.2.0/plugin/markdown/marked.js', async: true },
+        { src: 'libs/reveal.js-3.2.0/plugin/notes/notes.js', async: true }
+    ]
+});
+</script>
+
+  </body>
+</html>
