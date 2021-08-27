@@ -33,9 +33,12 @@ gallery:
 
 ***Agriculter in Kirgistan***
 
+Ein paar Fakten und Eindrücke von meiner Praktikumszeit in Kirgisistan von Juli bis November 2018. 
+
+
 |        Facts about Kyrgyzstan:          |     Kyrgyz agriculture         |        
 | -----------------:                      | --------------:                |
-|200000 m² ( = <1/2 of Germany )          |much old technique              |  
+|200000 m² ( = 50% of Germany )           |old technique                   |  
 |90% above 1500m                          |Handwork                        |  
 |20% of the area usable for agriculture   |improvisation                   |  
 |Climate: semiarid                        |cultivation in high altitudes   |  
